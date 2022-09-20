@@ -59,7 +59,7 @@ function isMouseInside(obj,e){
     }
 
       requestAnimationFrame(mainLoop)
-      setInterval(moveMole,2000)
+      setInterval(moveMole,10000)
       ctx.canvas.addEventListener("click",onclick)
       addEventListener("resize",onresize)
       //Add all loops to their appropriate functions.
