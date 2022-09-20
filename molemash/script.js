@@ -53,8 +53,8 @@ function isMouseInside(obj,e){
     }  
 
     function onresize(){
-      canvas.width=innerWidth
-      canvas.height=innerHeight
+      ctx.canvas.width=innerWidth
+      ctx.canvas.height=innerHeight
       //Whenever the page is resized, resize canvas.
     }
 
