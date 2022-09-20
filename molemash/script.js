@@ -50,4 +50,15 @@ function isMouseInside(obj,e){
             misses++;
         }//When there's a click, increment score and highscore (only if score is bigger than highscore) Else increment misses
     }  
-      requestAnimationFrame(mainLoop);setInterval(moveMole,2000);ctx.canvas.addEventListener("click",onclick)
+
+    function onresize(){
+      canvas.width=innerWidth
+      canvas.height=innerHeight
+      //Whenever the page is resized, resize canvas.
+    }
+
+      requestAnimationFrame(mainLoop)
+      setInterval(moveMole,2000)
+      ctx.canvas.addEventListener("click",onclick)
+      addEventListener("resize",onresize)
+      //Add all loops to their appropriate functions.
