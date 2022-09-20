@@ -1,10 +1,3 @@
-var canvas = document.createElement("canvas")
-var ctx = canvas.getContext("2d")
-document.body.appendChild(canvas)
-canvas.width = innerWidth
-canvas.height = innerHeight
-
-
 world = {};
 world.width = 720;
 world.height = 480;
@@ -23,20 +16,26 @@ world.rect = function(x, y, w, h) {
     this.height = h;
     this.id = Math.random(10000);
     this.type = "rect"
+    drawQueue.push(this)
+    return this;
+}
+
+world.sprite = function(x, y,img, w, h) {
+    this.img=img
+    this.x = x;
+    this.y = y;
+    this.width = this.img.width;
+    this.height = this.image.height;
+    this.id = Math.random(10000);
+    this.type = "image"
+    drawQueue.push(this)
     return this;
 }
 
 world.drawQueue = []
 
-world.draw = function(x) {
-    for(var i=0;i<world.drawQueue.length;i++){
-        if(x.id==world.drawQueue[i].id){
-            world.drawQueue[i]=x;
-            return;//If the object is alredy in drawqueue, the just update it instead of adding a new entry.
-        }
-    }
-    world.drawQueue.push(x)
-}
+
+
 
 main = function() {
     var fillStyle = ctx.fillStyle;
@@ -49,14 +48,11 @@ main = function() {
         if (d.type == "rect") {
             ctx.fillRect(d.x, d.y, d.width, d.height)
         }
+        else if(d.type==image){
+            ctx.drawImage(d.img,d.x,d.y)
+        }
     }
     requestAnimationFrame(main)//Clear the canvas and draw shapes with calles with draw at the framerate/
 
 }
 requestAnimationFrame(main)
-
-onresize = function() {
-    canvas.width = innerWidth;
-    canvas.height = innerHeight;
-    ctx.scale(canvas.width / world.width, canvas.height / world.height)
-}

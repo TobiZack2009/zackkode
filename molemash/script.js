@@ -4,6 +4,8 @@ var ctx=document.getElementById("c").getContext("2d")
         score=0
         highScore=Number(localStorage.getItem("score"))
         misses=0
+        scoreIncrement=1
+        moveSpeed=2000
 
         //Initialize the context and all variables.
 
@@ -59,7 +61,7 @@ function isMouseInside(obj,e){
     }
 
       requestAnimationFrame(mainLoop)
-      setInterval(moveMole,10000)
+      setInterval(moveMole,moveSpeed)
       ctx.canvas.addEventListener("click",onclick)
       addEventListener("resize",onresize)
       //Add all loops to their appropriate functions.
