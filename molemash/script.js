@@ -27,8 +27,8 @@ function isMouseInside(obj,e){
         ctx.drawImage(mole.image,mole.x,mole.y)
         ctx.font="30px Arial"
         ctx.fillText("Hits: "+score,40,40)
-        ctx.fillText( "High Score: "+highScore,40,80)
-        ctx.fillText("Misses: "+misses,40,120)
+        ctx.fillText( "Misses: "+misses,40,80)
+        ctx.fillText("High Score: "+highScore,40,120)
         //A main loop for redrawing the canvas and drawing all objects.
         
         requestAnimationFrame(mainLoop)//Calls the main loop at the framerate.
@@ -46,12 +46,15 @@ function isMouseInside(obj,e){
             }
             else if(score>highScore){
                        localStorage.setItem("score",score.toString())
-                       highScore=score
             }
         }
         else{
             misses++;
         }//When there's a click, increment score and highscore (only if score is bigger than highscore) Else increment misses
+
+       if(score=>scoreIncrement){
+           
+       } 
     }  
 
     function onresize(){
