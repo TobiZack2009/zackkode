@@ -53,7 +53,7 @@ function isMouseInside(obj,e){
         }//When there's a click, increment score and highscore (only if score is bigger than highscore) Else increment misses
 
        if(score=>scoreIncrement){
-           
+           movespeed*=.2
        } 
     }  
 
