@@ -4,7 +4,7 @@ var ctx=document.getElementById("c").getContext("2d")
         score=0
         highScore=Number(localStorage.getItem("score"))
         misses=0
-        initCrement=1
+        initCrement=15
         scoreIncrement=initCrement
         moveSpeed=2000
 
