@@ -56,7 +56,7 @@ function isMouseInside(obj,e){
 
        if(0==scoreIncrement){
            scoreIncrement=initCrement
-           moveSpeed*=.2
+           moveSpeed-=moveSpeed*4
        } 
     }  
 
