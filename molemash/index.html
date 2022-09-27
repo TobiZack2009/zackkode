@@ -3,7 +3,7 @@
     <head>
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <title>Mole Mash</title>
-        <link rel="icon" href="mole.png">
+        <link rel="icon" href="assets/mole.png">
         <style>
             canvas{
                 width:100%;
@@ -15,10 +15,22 @@
                 padding: 0;
                 margin: 0;
             }
+
+            noscript{
+                text-align: center;
+                background-color: azure;
+                border-color: black;
+                font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+            }
         </style></head>
     <body>
 <canvas id="c"></canvas>
 <script src="script.js"></script>
+<noscript>
+<h1>Oh No</h1><br>
+<h1>JS isn't supported!</h1><br>
+You need Javascript enabled of this game to work.
+</noscript>
 
     </body>
 </html>
