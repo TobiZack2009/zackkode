@@ -4,7 +4,8 @@ var ctx=document.getElementById("c").getContext("2d")
         score=0
         highScore=Number(localStorage.getItem("score"))
         misses=0
-        scoreIncrement=1
+        initCrement=1
+        scoreIncrement=initCrement
         moveSpeed=2000
 
         //Initialize the context and all variables.
@@ -36,11 +37,12 @@ function isMouseInside(obj,e){
     function moveMole(){
         mole.x=Math.random()*(ctx.canvas.width-0)+0;
         mole.y=Math.random()*(ctx.canvas.width-0)+0;
+        setTimeout(moveMole,moveSpeed)
     }//A function to move the mole to a random position.
 
     function onclick(e){
       if(isMouseInside(mole,e)){
-            score++;
+            score++;scoreIncrement--;
             if(!localStorage.getItem("score")){
                    localStorage.setItem("score",score.toString())
             }
@@ -52,8 +54,9 @@ function isMouseInside(obj,e){
             misses++;
         }//When there's a click, increment score and highscore (only if score is bigger than highscore) Else increment misses
 
-       if(score=>scoreIncrement){
-           movespeed*=.2
+       if(0=>scoreIncrement){
+           scoreIncrement=initCrement
+           moveSpeed*=.2
        } 
     }  
 
@@ -64,7 +67,7 @@ function isMouseInside(obj,e){
     }
 
       requestAnimationFrame(mainLoop)
-      setInterval(moveMole,moveSpeed)
+      setTimeout(moveMole,moveSpeed)
       ctx.canvas.addEventListener("click",onclick)
       addEventListener("resize",onresize)
       //Add all loops to their appropriate functions.
