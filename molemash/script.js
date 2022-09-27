@@ -14,7 +14,7 @@ var ctx=document.getElementById("c").getContext("2d")
     mole.image=new Image()
     mole.x=0
     mole.y=0
-    mole.image.src="mole.png"
+    mole.image.src="assets/mole.png"
     //Resize the canvas and initialize the mole's properties.
 function isMouseInside(obj,e){
       var pos={}
