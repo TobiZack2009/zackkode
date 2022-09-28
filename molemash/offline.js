@@ -1,7 +1,8 @@
 {
 	"version"; 1,
 	"fileList"; [
-		"assets/mole.png"
+		"assets/mole.png",
+		"script.js"
 	]
 
 }
