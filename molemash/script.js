@@ -26,7 +26,7 @@ function isMouseInside(obj,e){
     function mainLoop(){
         ctx.clearRect(0,0,ctx.canvas.width,ctx.canvas.height)
         ctx.drawImage(mole.image,mole.x,mole.y)
-        ctx.font="30px Arial"
+        ctx.font="30px Pelatino"
         ctx.fillText("Hits: "+score,40,40)
         ctx.fillText( "Misses: "+misses,40,80)
         ctx.fillText("High Score: "+highScore,40,120)
