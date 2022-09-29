@@ -1,8 +1,10 @@
 {
-	"version": 2,
+	"version": 3,
 	"fileList": [
 		"assets/mole.png",
-		"script.js"
+		"script.js",
+		"offline.js",
+		"index.html"
 	]
 
 }
