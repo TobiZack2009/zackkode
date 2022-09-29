@@ -26,6 +26,7 @@
 <script>
     if(navigator.serviceWorker){
         navigator.serviceWorker.register("sw.js", { scope: "./" });
+        console.log("Register service worker")
     }
 </script>
 <script src="script.js"></script>
