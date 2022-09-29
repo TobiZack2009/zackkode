@@ -3,7 +3,6 @@
     <head>
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <title>Pong</title>
-        <link rel="icon" href="assets/mole.png">
         <style>
             canvas{
                 width:100%;
@@ -23,12 +22,6 @@
         </style></head>
     <body>
 <canvas id="c"></canvas>
-<script>
-    if(navigator.serviceWorker){
-        navigator.serviceWorker.register("sw.js", { scope: "./" });
-        console.log("Register service worker")
-    }
-</script>
 <script src="script.js"></script>
 <noscript>
 <h1>Oh No</h1><br>

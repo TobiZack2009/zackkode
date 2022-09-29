@@ -66,7 +66,7 @@ function isMouseInside(obj,e){
       //Whenever the page is resized, resize canvas.
     }
 
-    if(canvas.width<=350){
+    if(ctx.canvas.width<=350){
         ctx.font="15px url(assets/Alkalami Regular.ttf)"
     }
 
