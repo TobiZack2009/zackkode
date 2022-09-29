@@ -8,6 +8,7 @@ var ctx=document.getElementById("c").getContext("2d")
         scoreIncrement=initCrement
         moveSpeed=2000
 
+ctx.font="30px url(assets/Alkalami Regular.ttf)"        
         //Initialize the context and all variables.
 
     ctx.canvas.width=innerWidth; ctx.canvas.height=innerHeight
@@ -26,7 +27,6 @@ function isMouseInside(obj,e){
     function mainLoop(){
         ctx.clearRect(0,0,ctx.canvas.width,ctx.canvas.height)
         ctx.drawImage(mole.image,mole.x,mole.y)
-        ctx.font="30px url(assets/Alkalami Regular.ttf)"
         ctx.fillText("Hits: "+score,40,40)
         ctx.fillText( "Misses: "+misses,40,80)
         ctx.fillText("High Score: "+highScore,40,120)
@@ -64,6 +64,10 @@ function isMouseInside(obj,e){
       ctx.canvas.width=innerWidth
       ctx.canvas.height=innerHeight
       //Whenever the page is resized, resize canvas.
+    }
+
+    if(canvas.width<=350){
+        ctx.font="15px url(assets/Alkalami Regular.ttf)"
     }
 
       requestAnimationFrame(mainLoop)
