@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+    
+<head>
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <title>Number Counter</title>
+    <style>
+    html{
+     background-image: url(/background.png);
+     background-color:rgba(232, 121, 11, 0.253);
+     
+ }
+ span{
+    color:rgb(210, 30, 168);
+    font-size: 30px; 
+    font-family: 'Mouse Memoirs', sans-serif;
+    font-weight: bold;  
+}
+
+     
+ 
+ </style>
+</head>
+<body>
+    
+<input type="number" size="3" id="text"><br><br>
+<button id="btn">Generate</button><br><br>
+<span id="s"></span>
+<script src="/math.js"></script>
+<script>
+ let tbox=document.getElementById("text")
+     btn=document.getElementById("btn") 
+     span=document.getElementById("s")
+     int=tbox.valueAsNumber
+
+text.addEventListener("keypress",function(e){
+    if(e.keyCode==13){
+        e.preventDefault()
+        btn.click()
+    }
+})
+
+btn.onclick=function(){
+    
+const int=tbox.valueAsNumber
+const list=MathJS.factorOf(int)
+tbox.blur()
+span.innerText="Numbers: "
+  
+for(var i=0;i<list.length;i++){
+span.innerText+=" "+list[i]+","
+}
+ }
+     
+    
+</script>
+
+</body>
+</html>

@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Multiplication Table Generator</Table></title>
+    <style>
+        h1{
+            color: red;
+        }
+        #startNum, #endNum, #rows{
+            width:10%;
+        }
+    </style>
+</head>
+<body>
+   <h1>Multiplication Table Generator</h1><br><br>
+   Range:<input type="number" id="startNum" size="2" value="1"></input> to 
+   <input type="number" id="endNum" size="3" value="10"></input><br><br>
+   Rows:<input type="number" id="rows" size="3" value="10"></input><br><br>
+   <button id="gen">Generate</button>
+   <p id="p"></p>
+<script>
+    var startNum,endNum,rows
+        body=document.body
+        rowsBox=document.getElementById("rows")
+        sNumBox=document.getElementById("startNum")
+        eNumBox=document.getElementById("endNum")
+        genBtn=document.getElementById("gen")
+        p=document.getElementById("p")
+
+         genBtn.onclick=function(){
+            startNum=sNumBox.value
+            endNum=eNumBox.value
+            rows=rowsBox.value
+            p.innerHTML=""
+    for(var i=startNum;i<=endNum;i++){
+    p.innerHTML+="<h3>"+i+"</h3>"
+        for(var u=1;u<=rows;u++){
+            p.innerHTML+=i+"x"+u+"="+i*u+"<br>"
+
+        }
+        p.innerHTML+="<br>"
+
+
+
+
+    }}
+</script>
+
+
+
+
+
+
+
+</body></html>
