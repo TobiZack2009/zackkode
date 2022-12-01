@@ -54,8 +54,7 @@ function tick(){
     }
 
     if(ball.collidedWith(paddle1)){
-        ball.xVel=0
-        ball.yVel=0
+       console.log("collid")
     }
     if(ball.x<0||ball.y<0){
        ball.xVel=5*Math.random()
