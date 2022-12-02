@@ -7,8 +7,7 @@ code=input("""This is a progam to calculate mathematical formulas.
          Area of a circle,         c
          Area of triangle, or      t
          Area of rectangle.        r
-         Code: 
-"""
+         Code:                     """
 )
 
 
