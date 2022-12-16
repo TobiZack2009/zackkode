@@ -1,75 +1,93 @@
 <!doctype HTML>
 <html>
-    <head>
-        <meta name="viewport" content="width=360, height=240 initial-scale=1" />
-        <title>Pong</title>
-        <style>
-            canvas{
-                background-color: green;
-                transform: scale(2);
-              }
-            html,body{
-              
-                padding: 0;
-                margin: 0;
-                background-color: black;
-                text-align: center;
-               }
 
-            noscript,h1{
-                text-align: center;
-                font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+<head>
+    <meta name="viewport" content="width=360, height=240 initial-scale=1" />
+    <title>Pong</title>
+    <style>
+        canvas {
+            background-color: green;
+
+        }
+
+        html,
+        body {
+
+            padding: 0;
+            margin: 0;
+            background-color: black;
+            text-align: center;
+        }
+
+        noscript,
+        h1 {
+            text-align: center;
+            font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+        }
+
+        .canvas-div {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+
+        }
+
+        .score {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+        }
+    </style>
+</head>
+
+<body>
+    <DIV class="canvas-div">
+        <span class="score">s</span>
+        <canvas id="c" width="360px" height="240px" oncopy oncut onpaste></canvas>
+    </DIV>
+    <script src="script.js"></script>
+    <script>
+        let paddle1 = new rect(0, 360 / 2, 10, 50, "red")
+        paddle2 = new rect(350, 120, 10, 50, "blue")
+        ball = new circle(180, 120, 20, "yellow")
+        score = 0
+
+
+        ball.xVel = 5 * Math.random()
+        ball.yVel = 5 * Math.random()
+        function tick() {
+            if (keycode == "ArrowUp") {
+                paddle1.y -= 2.5
+            }
+            if (keycode == "ArrowDown") {
+                paddle1.y += 2.5
             }
 
-            .canvas-div{
-                position: absolute;
-                top:50%;
-                left:50%;
-                transform: translate(-50%,-50%);
-                
+            canvas.onmousemove = function () {
+                // console.log(mouseX,mouseY)
             }
-        </style></head>
-    <body>
-        <DIV class="canvas-div">
-<canvas id="c" width="360px" height="240px" oncopy oncut onpaste ></canvas>
-</DIV>
-<script src="script.js"></script>
-<script>
-   var paddle1=new rect(0,360/2,10,50,"red")
-       paddle2=new rect(350,120,10,50,"blue") 
-       ball=new circle(180,120,20,"yellow")
 
-ball.xVel=5*Math.random()
-ball.yVel=5*Math.random()
-function tick(){
-    if(keycode=="ArrowUp"){
-       paddle1.y-=2.5
-    }
-    if(keycode=="ArrowDown"){
-       paddle1.y+=2.5
-    }
-
-    canvas.onmousemove=function(){
-     console.log(mouseX,mouseY)
-    }
-
-    if(ball.collidedWith(paddle1)){
-       console.log("collid")
-    }
-    if(ball.x<0||ball.y<0){
-       ball.xVel=5*Math.random()
-       ball.yVel=5*Math.random()
-    }
-    if(ball.x>360||ball.y>240){
-       ball.xVel=-5*Math.random()
-       ball.yVel=-5*Math.random()
-    }
-}
-</script>
-<noscript>
-<h1>Oh No</h1><br>
-<h1>JS isn't supported!</h1><br>
-You need Javascript enabled of this game to work.
-</noscript>
+            if (paddle1.touching(ball)) {
+                score += 1
+                console.log("collid")
+            }
+            if (ball.x < 0 || ball.y < 0) {
+                ball.xVel = 5 * Math.random()
+                ball.yVel = 5 * Math.random()
+            }
+            if (ball.x > 360 || ball.y > 240) {
+                ball.xVel = -5 * Math.random()
+                ball.yVel = -5 * Math.random()
+            }
+        }
+    </script>
+    <noscript>
+        <h1>Oh No</h1><br>
+        <h1>JS isn't supported!</h1><br>
+        You need Javascript enabled of this game to work.
+    </noscript>
 </body>
+
 </html>
