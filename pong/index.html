@@ -2,7 +2,7 @@
 <html>
 
 <head>
-    <meta name="viewport" content="width=360, height=240 initial-scale=1" />
+    <meta name="viewport" content="width=360, height=480 initial-scale=1" />
     <title>Pong</title>
     <style>
         canvas {
@@ -45,12 +45,12 @@
 <body>
     <DIV class="canvas-div">
         <span class="score">s</span>
-        <canvas id="c" width="360px" height="240px" oncopy oncut onpaste></canvas>
+        <canvas id="c" width="720px" height="480px" oncopy oncut onpaste></canvas>
     </DIV>
     <script src="script.js"></script>
     <script>
-        let paddle1 = new rect(0, 360 / 2, 10, 50, "red")
-        paddle2 = new rect(350, 120, 10, 50, "blue")
+        let paddle1 = new rect(0, 720 / 2, 10, 50, "red")
+        paddle2 = new rect(700, 120, 10, 50, "blue")
         ball = new circle(180, 120, 20, "yellow")
         score = 0
 
@@ -71,13 +71,14 @@
 
             if (paddle1.touching(ball)) {
                 score += 1
-                console.log("collid")
+                ball.xVel = -ball.xVel
+                ball.yVel = -ball.yVel
             }
             if (ball.x < 0 || ball.y < 0) {
                 ball.xVel = 5 * Math.random()
                 ball.yVel = 5 * Math.random()
             }
-            if (ball.x > 360 || ball.y > 240) {
+            if (ball.x > 360 || ball.y > 480) {
                 ball.xVel = -5 * Math.random()
                 ball.yVel = -5 * Math.random()
             }

@@ -28,8 +28,8 @@ function touching(object) {
 
 scaleX = window.innerWidth / canvas.width;
 scaleY = window.innerHeight / canvas.height;
-scaleToFit = Math.floor(Math.min(scaleX, scaleY));
-scaleToCover = Math.floor(Math.max(scaleX, scaleY));
+scaleToFit =(Math.min(scaleX, scaleY));
+scaleToCover = (Math.max(scaleX, scaleY));
 canvas.style.transformOrigin = "";
 canvas.style.transform = `scale(${scaleToFit})`;
 
@@ -114,7 +114,7 @@ main = function () {
         d.x = d.x;
         d.y = d.y;
       }
-      if (this.x >= 360 || this.y >= 240) {
+      if (this.x >= 360 || this.y >= 480) {
         d.x = d.x;
         d.y = d.y;
       }
@@ -143,11 +143,11 @@ requestAnimationFrame(main);
 
 addEventListener("resize", function () {
   scaleX = window.innerWidth / canvas.width;
-  scaleY = window.innerHeight / canvas.height;
-  scaleToFit = Math.floor(Math.min(scaleX, scaleY));
-  scaleToCover = Math.floor(Math.max(scaleX, scaleY));
-  canvas.style.transformOrigin = "";
-  canvas.style.transform = `scale(${scaleToFit})`;
+scaleY = window.innerHeight / canvas.height;
+scaleToFit =(Math.min(scaleX, scaleY));
+scaleToCover = (Math.max(scaleX, scaleY));
+canvas.style.transformOrigin = "";
+canvas.style.transform = `scale(${scaleToFit})`;
 });
 //Define all events and variables nessecary for them to work.
 
@@ -170,7 +170,7 @@ canvas.addEventListener("mousedown", function (e) {
 
 addEventListener("keydown", function (e) {
   keycode = e.code;
-  console.log(e.code);
+  //console.log(e.code);
 });
 
 addEventListener("keyup", function (e) {
